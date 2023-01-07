@@ -35,13 +35,23 @@ async function fund() {
         const fundMe = new ethers.Contract(contractAddress, abi, signer);
 
         const before = await fundMe.provider.getBalance(contractAddress);
+        try {
+            const fundResponse = await fundMe.fund({value: ethAmt});
+            await hashMining(fundResponse, provider);
 
-        const fundResponse = await fundMe.fund({value: ethAmt});
-        await hashMining(fundResponse, provider);
-
-        const after = await fundMe.provider.getBalance(fundMe.address);
-        console.log("Hooray! Done");
-        document.getElementById("fundResponse").innerHTML = `Thanks! You have successfully funded: ${(after-before)/1e18} ETH`;
+            const after = await fundMe.provider.getBalance(fundMe.address);
+            console.log("Hooray! Done");
+            document.getElementById("fundResponse").innerHTML = `Thanks! You have successfully funded: ${(after-before)/1e18} ETH`;
+        }
+        catch (e) {
+            if (e.message.toLowerCase().includes("user denied transaction")) {
+                document.getElementById("fundResponse").innerHTML = "Txn was rejected by user";
+            }
+            else {
+                document.getElementById("fundResponse").innerHTML = "Txn was terminated due to an error";
+                console.log(e);
+            }
+        }   
     }
 }
 
