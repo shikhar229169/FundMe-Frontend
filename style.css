@@ -1,0 +1,30 @@
+#connectButton {
+    color: white;
+    background-color: grey;
+}
+#connectButton:hover {
+    background-color: black;
+}
+#connectButton:active {
+    background-color: rgb(49, 47, 47);
+}
+
+.heading {
+    border: 0px solid;
+    border-radius: 1em;
+    padding-left: 10px;
+    background-color: grey;
+}
+
+.button {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.interactingButtons {
+    margin-top: 1px;
+}
+
+label {
+    display: block;
+}
