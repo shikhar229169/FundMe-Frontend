@@ -17,7 +17,8 @@
         <span id="connectButtonFlag"></span>
     </div>
     <div>
-        <label for="fundButton"> Click FundMe to fund </label>
+        <label for="ethAmt">Enter Amount to Fund</label>
+        <input id="ethAmt" placeholder="Enter Amt" type="number" class="takeInput"/>
         <button id="fundButton" class="button"> FundMe </button>
         <span id="fundResponse"></span>
     </div>
@@ -25,7 +26,13 @@
     <div>
         <label for="withdrawButton"> Click Withdraw to withdraw </label>
         <button id="withdrawButton" class="button"> Withdraw </button>
-        <span id="withdrawResponse"></span>
+        <span id="withdrawMessage"></span>
+    </div>
+
+    <div>
+        <span>Get Balance: </span>
+        <button id="balanceButton" class="button">Balance</button>
+        <span id="balanceButtonResponse"></span>
     </div>
 </body>
 

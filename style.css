@@ -1,8 +1,4 @@
-#connectButton {
-    color: white;
-    background-color: grey;
-}
-#connectButton:hover {
+.button:hover {
     background-color: black;
 }
 #connectButton:active {
@@ -19,6 +15,8 @@
 .button {
     cursor: pointer;
     margin: 10px;
+    color: white;
+    background-color: grey;
 }
 
 .interactingButtons {
@@ -27,4 +25,21 @@
 
 label {
     display: block;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+margin: 0; 
+}
+
+.takeInput {
+    background-color: lightgreen;
+    color: gray;
+    font-size: 20px;
+    width: 150px;
+    border: 0px solid;
+    border-radius: 5px;
 }
